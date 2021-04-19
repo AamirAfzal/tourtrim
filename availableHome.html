@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:whitesmoke">
+    
+    <div class="" style="margin: 20px;">
+        <input class="form-control form-control-lg" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by Type or Location" title="Type in a name">
+        <table style="margin-top: 20px;" id="myTable" class="table table-hover table-responsive-md">
+            <thead>
+                <tr>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                
+                        <tr>
+                            <td></td>
+                            <td>id</td>
+                            <td>states</td>
+                            <td>edate</td>
+                            <td>price</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <form method="post">
+                                    <input type="hidden" name="price" value=""/>
+                                     <input type="hidden" name="price" value=""/>
+                                    <input type="hidden" name="price" value=""/>
+                                    <input type="hidden" name="price" value=""/>
+                                    <input name="book" class="btn btn-outline-dark btn-block" type=submit value="Book Me">
+                                </form>
+                            </td>
+                        </tr>
+             
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            arr = tr[i].getElementsByTagName("td");
+            td1 = arr[2];
+            td2 = arr[6];
+            if (td1 || td2) {
+            txtValue1 = td1.textContent || td1.innerText;
+            txtValue2 = td2.textContent || td2.innerText;
+            if (txtValue1.toUpperCase().indexOf(filter) > -1 || txtValue2.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+            }       
+        }
+        }
+    </script>
+</body>
+</html>
